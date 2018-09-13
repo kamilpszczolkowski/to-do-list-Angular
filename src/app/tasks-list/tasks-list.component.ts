@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-tasks-list',
   templateUrl: './tasks-list.component.html',
-  styleUrls: ['./tasks-list.component.css']
+  styleUrls: ['./tasks-list.component.css'],
 })
 export class TasksListComponent implements OnInit {
 
@@ -25,4 +25,7 @@ export class TasksListComponent implements OnInit {
   ngOnInit() {
   }
 
+  getColor(): string{
+    return this.tasksList.length >= 5 ? 'red' : 'green'
+  }
 }
