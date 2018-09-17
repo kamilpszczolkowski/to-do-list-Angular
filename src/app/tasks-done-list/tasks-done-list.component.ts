@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TasksService} from '../services/tasks.service';
+import {Task} from '../model/task';
 
 @Component({
   selector: 'app-tasks-done-list',
@@ -8,10 +9,10 @@ import {TasksService} from '../services/tasks.service';
 })
 export class TasksDoneListComponent implements OnInit {
 
-  tasksDone: Array<string> = [];
+  tasksDone: Array<Task> = [];
 
   constructor(private tasksService: TasksService) {
-    this.tasksService.getTasksDoneObs().subscribe( (tasks: Array<string>) => {
+    this.tasksService.getTasksDoneObs().subscribe( (tasks: Array<Task>) => {
       this.tasksDone = tasks;
     });
   }

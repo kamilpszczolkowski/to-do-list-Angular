@@ -1,4 +1,4 @@
 <div>
   <input [(ngModel)]="newTask" >
-  <button (click)="add()">Add task</button>
+  <button (click)="add()" [disabled]="checkIfEmpty()">Add task</button>
 </div>

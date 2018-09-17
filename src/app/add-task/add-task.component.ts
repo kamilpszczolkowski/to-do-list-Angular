@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {TasksService} from '../services/tasks.service';
+import {Task} from '../model/task';
 
 @Component({
   selector: 'app-add-task',
@@ -7,7 +8,7 @@ import {TasksService} from '../services/tasks.service';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
-  newTask: string;
+  newTask: string = '';
 
   constructor(private tasksTaskservice: TasksService) {
   }
@@ -16,8 +17,14 @@ export class AddTaskComponent implements OnInit {
   }
 
   add() {
-    this.tasksTaskservice.add(this.newTask);
+    const task: Task = {name: this.newTask, created: new Date()};
+    this.tasksTaskservice.add(task);
     this.newTask = '';
   }
 
+  checkIfEmpty() {
+    if (this.newTask.length === 0) { return true; }
+    return false;
+  }
 }
+
