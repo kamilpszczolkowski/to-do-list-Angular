@@ -1,11 +1,11 @@
 <div>
   <div class="container">
-    <app-add-task (emitTask)="add($event)"></app-add-task>
+    <app-add-task></app-add-task>
   </div>
 
   <div class="container">
-    <app-tasks-list [tasksList]="tasksList" (removeTask)="remove($event)" (taskDone)="done($event)"></app-tasks-list>
-    <app-tasks-done-list [tasksDone]="tasksDone"></app-tasks-done-list>
+    <app-tasks-list></app-tasks-list>
+    <app-tasks-done-list></app-tasks-done-list>
   </div>
 </div>
 

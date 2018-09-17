@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {TasksService} from '../services/tasks.service';
 
 @Component({
   selector: 'app-tasks-list',
@@ -7,25 +8,27 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 })
 export class TasksListComponent implements OnInit {
 
-  @Input() tasksList = [];
+  tasksList = [];
 
-  @Output() removeTask = new EventEmitter<string>();
-  @Output() taskDone = new EventEmitter<string>();
 
   remove(task){
-    this.removeTask.emit(task);
+    this.tasksService.remove(task);
   }
 
   done(task){
-    this.taskDone.emit(task);
+    this.tasksService.done(task);
   }
 
-  constructor() { }
+  constructor(private tasksService: TasksService) {
+    this.tasksService.getTasksListObs().subscribe((tasks: Array<string>) => {
+      this.tasksList = tasks;
+    });
+  }
 
   ngOnInit() {
   }
 
   getColor(): string{
-    return this.tasksList.length >= 5 ? 'red' : 'green'
+    return this.tasksList.length >= 5 ? 'red' : 'green';
   }
 }
