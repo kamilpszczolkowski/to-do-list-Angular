@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Task} from '../model/task';
+import {HttpService} from './http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class TasksService {
 
   private tasksListObs = new BehaviorSubject<Array<Task>>([]);
 
-  constructor() {
+  constructor(private httpService: HttpService) {
     const tasksList = [
       {name: 'Do the shopping', created: new Date().toLocaleString(), isDone: false},
       {name: 'Clean the room', created: new Date().toLocaleString(), isDone: false},
