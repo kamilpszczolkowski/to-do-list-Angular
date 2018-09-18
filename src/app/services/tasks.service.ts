@@ -14,10 +14,10 @@ export class TasksService {
 
   constructor() {
     this.tasksList = [
-      {name: 'Do the shopping', created: new Date()},
-      {name: 'Clean the room', created: new Date()},
-      {name: 'Learn Angular', created: new Date()},
-    {name: 'Make a dinner', created: new Date()}
+      {name: 'Do the shopping', created: new Date().toLocaleString(), isDone: false},
+      {name: 'Clean the room', created: new Date().toLocaleString(), isDone: false},
+      {name: 'Learn Angular', created: new Date().toLocaleString(), isDone: false},
+    {name: 'Make a dinner', created: new Date().toLocaleString(), isDone: false}
     ];
     this.tasksListObs.next(this.tasksList);
   }
