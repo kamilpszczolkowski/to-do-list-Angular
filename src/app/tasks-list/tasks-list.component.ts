@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TasksService} from '../services/tasks.service';
-import { Task } from '../model/task';
+import {Task} from '../model/task';
 
 @Component({
   selector: 'app-tasks-list',
@@ -12,25 +12,24 @@ export class TasksListComponent implements OnInit {
   tasksList: Array<Task> = [];
 
 
-  remove(task: Task){
+  remove(task: Task) {
     this.tasksService.remove(task);
   }
 
-  done(task: Task){
-    task.end = new Date().toLocaleString();
+  done(task: Task) {
     this.tasksService.done(task);
   }
 
   constructor(private tasksService: TasksService) {
     this.tasksService.getTasksListObs().subscribe((tasks: Array<Task>) => {
-      this.tasksList = tasks.slice();
+      this.tasksList = tasks.filter(task => task.isDone === false);
     });
   }
 
   ngOnInit() {
   }
 
-  getColor(): string{
+  getColor(): string {
     return this.tasksList.length >= 5 ? 'red' : 'green';
   }
 }

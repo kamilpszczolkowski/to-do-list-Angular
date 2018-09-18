@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TasksService} from '../services/tasks.service';
 import {Task} from '../model/task';
 
@@ -12,8 +12,8 @@ export class TasksDoneListComponent implements OnInit {
   tasksDone: Array<Task> = [];
 
   constructor(private tasksService: TasksService) {
-    this.tasksService.getTasksDoneObs().subscribe( (tasks: Array<Task>) => {
-      this.tasksDone = tasks;
+    this.tasksService.getTasksListObs().subscribe((tasks: Array<Task>) => {
+      this.tasksDone = tasks.filter(task => task.isDone === true);
     });
   }
 
