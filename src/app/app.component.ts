@@ -8,11 +8,7 @@ import {TasksService} from './services/tasks.service';
 })
 export class AppComponent {
 
-  constructor(private tasksService: TasksService) {
-  }
-
-  save() {
-    this.tasksService.saveTasksInDb();
+  constructor() {
   }
 }
 
