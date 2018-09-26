@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TasksDoneListComponent } from './tasks-done-list/tasks-done-list.component';
@@ -28,7 +28,8 @@ import {AppRoutingModule} from './app.routing.model';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
