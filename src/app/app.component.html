@@ -5,6 +5,12 @@
   <li class="nav-item">
     <a class="nav-link" routerLink="doneTask" routerLInkActive="active">Done</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" *ngIf="!authService.user" routerLink="login" routerLinkActive="active">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" *ngIf="authService.user" (click)="logOut()">Log Out</a>
+  </li>
 </ul>
 <router-outlet></router-outlet>
 
