@@ -1,0 +1,49 @@
+button {
+  margin: 3px;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.inputTitle {
+  display: block;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.form {
+  padding: 20px;
+  border: 1px solid rgb(192, 192, 192);
+  background-color: rgb(246, 246, 246);
+  border-radius: 5px;
+}
+
+button[type="submit"], button[type="button"] {
+ background-color: rgb(77, 225, 63);
+  border: 1px solid transparent;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(64, 164, 52);
+}
+
+button[type="button"] {
+  background-color: cornflowerblue;
+}
+
+button[type="button"]:hover {
+  background-color: darkblue;
+}
+
+button[type="submit"]:disabled,  button[type="button"]:disabled {
+  background-color: lightgray;
+  cursor: default;
+}

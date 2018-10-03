@@ -1,11 +1,15 @@
 <div class="container">
-  <form (ngSubmit)="logIn(formData)" #formData='ngForm'>
-    <div style="display: inline-grid; margin: 10px">
-      <label>Email</label>
-      <input ngModel type="email" name="email" required>
+  <form (ngSubmit)="logIn(formData)" #formData='ngForm' class="form">
+    <div style="display: grid; margin: 10px">
+      <label>
+        <span class="inputTitle">Email</span>
+        <input ngModel type="email" name="email" required>
+      </label>
 
-      <label>Password</label>
-      <input ngModel type="password" name="password" required>
+      <label>
+        <span class="inputTitle">Password</span>
+        <input ngModel type="password" name="password" required>
+      </label>
 
       <button type="submit" [disabled]="formData.invalid">Log in</button>
       <button type="button" [disabled]="formData.invalid" (click)="signUp(formData)">Sign Up</button>
