@@ -24,7 +24,7 @@ got space to implement reactive form and use http.service for pulling data from 
 My new project was created with Angular-cli. I've got knowledge about basic functions to create new app, components, 
 services etc.
 
-I used RxJS - library probably always used in par with Angular. It allowed me for easy data access through observables.
+I used RxJS - library probably always used in par with Angular. It allowed me to access data easily through observables.
 # MongoDB
 
 MongoDB API was used to store tasks data on persistent server.
