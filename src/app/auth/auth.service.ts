@@ -22,17 +22,17 @@ export class AuthService {
         this.router.navigate(['/todoTask']);
       })
       .catch(err => {
-        console.log(err);
+        alert(err.message);
       });
   }
 
   signUp(email: string, password: string) {
     this.angularFire.auth.createUserWithEmailAndPassword(email, password)
       .then(user => {
-        console.log(user);
+        this.router.navigate(['/todoTask']);
       })
       .catch(err => {
-        console.log(err);
+        alert(err.message);
       });
   }
 
