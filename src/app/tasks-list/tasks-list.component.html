@@ -1,18 +1,20 @@
 <div class="container">
   <app-add-task></app-add-task>
   <ng-container *ngIf="tasksList.length > 0 ; else noTask">
-    <p [ngStyle]="{color: getColor()}">Zadani do wykonania: {{tasksList.length}}</p>
-    <ul>
-      <li appDate [date]="task.created" *ngFor="let task of tasksList | sortName let odd = odd"
-          [ngClass]="{'odd-li': odd, 'last-li': tasksList.length===1}">
-        {{task.name | transformTask: '!' }}
-        <button type="button" class="btn btn-danger" (click)="remove(task)">Delete</button>
-        <button type="button" class="btn btn-success" (click)="done(task)">Done</button>
-      </li>
-    </ul>
+    <div class="tasksCont">
+      <p [ngStyle]="{color: getColor()}">Tasks to do: {{tasksList.length}}</p>
+      <ul>
+        <li appDate [date]="task.created" *ngFor="let task of tasksList | sortName let odd = odd"
+            [ngClass]="{'odd-li': odd, 'last-li': tasksList.length===1}">
+          {{task.name | transformTask: '!' }}
+            <button type="button" class="btn btn-danger" (click)="remove(task)">Delete</button>
+            <button type="button" class="btn btn-success" (click)="done(task)">Done</button>
+        </li>
+      </ul>
+    </div>
   </ng-container>
   <ng-template #noTask>
     <p>No more tasks to do</p>
   </ng-template>
-  <button (click)="save()">Zapisz</button>
+  <button class="save" (click)="save()">Save</button>
 </div>

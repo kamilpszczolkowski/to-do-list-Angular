@@ -1,3 +1,14 @@
+.tasksCont {
+  border: 1px solid rgb(192, 192, 192);
+  background-color: rgb(246, 246, 246);
+  margin: 5px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 li {
   background: lightgray;
   margin: 5px;
@@ -11,4 +22,31 @@ li {
 .last-li {
   background: pink;
   margin: 5px;
+}
+
+.save {
+  background-color: cornflowerblue;
+  border: 1px solid transparent;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
+.save:hover {
+  background-color: darkblue;
+}
+
+.save:disabled {
+  background-color: lightgray;
+  cursor: default;
+}
+
+p {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
 }
