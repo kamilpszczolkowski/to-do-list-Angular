@@ -1,5 +1,6 @@
 # to-do-list-Angular
-Application allowing users to manage their tasks with few extra features, created for practicing skills purpouse.
+Application allowing users to manage their tasks with few extra features, created for practicing skills purpouse. Working app is deployed
+on firebase server, you can use it here: https://todo-angular-f4a8e.firebaseapp.com/
 
 # General description
 
